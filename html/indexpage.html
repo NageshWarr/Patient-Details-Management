@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="updateformcss.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+<body style="background-color:black">
+<img src="i1.png" width=270px height=300px class="mx-auto d-block">
+<marquee> <font color=red size=5px>YOU ARE LOGGED IN AS ADMIN</font></marquee>
+<div class="container" style="padding-top:100px; padding-left:30px;">
+   <div class="col">
+   <button type="button" class="btn btn-danger active" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="width:75%;">
+    <div class="card">
+        <div class="card">
+        <h4>DELETE Patient</h4>
+       <a href=""> <span class"chev">&rsaquo;</span></a>
+      </div>
+    </button>
+    </div>
+    <div class="col">
+   <button type="button" class="btn btn-success active" style="width:70%;" onclick="location.assign('viewpatient.jsp');">
+    <div class="card">
+        <div class="card">
+        <h4>VIEW  Patient</h4>
+       <a href=""> <span class"chev">&rsaquo;</span></a>
+      </div>
+    </button>
+    
+    </div>
+  
+   <div class="col">
+   <button type="button" class="btn btn-success active" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="width:70%;">
+    <div class="card">
+        <div class="card">
+        <h4>ADD  Patient</h4>
+       <a href=""> <span class"chev">&rsaquo;</span></a>
+      </div>
+    </button>
+    </div>  
+  <div class="col">
+   <button type="button" class="btn btn-primary active" data-bs-toggle="modal" data-bs-target="#exampleModal3" style="width:80%;">
+    <div class="card">
+        <div class="card">
+        <h4>UPDATE Patient</h4>
+       <a href=""> <span class"chev">&rsaquo;</span></a>
+      </div>
+    </button>
+    </div>
+       
+  </div>
+</div>
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="text-align:center;">
+        <form action="DeleteServlet" method="get">
+           <div class="form-group">
+          <label>PATIENT ID</label><br>
+           <input type="text" name="id">
+              <h6><font color="red">*Enter the Patient id to be Deleted</font></h6>
+          </div>
+              <div class="form-group">
+           <input type="submit" value="Delete" class="btn btn-danger">
+          </div>
+          </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#bd3232;">
+        <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Add Patient!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="text-align:center;">
+      	<form action="Firstservlet" method="get">
+					
+			
+					<div class="form-holder">
+					<br>
+						<input type="number" class="form-control" placeholder="PatientId" name="id">
+					</div>
+					<div class="form-holder">
+					<br>
+						<input type="text" class="form-control" placeholder="PatientName" name="name">
+					</div>
+					<div class="form-holder">
+					<br>
+						<input type="text" class="form-control" placeholder="Patient Membership" name="membership">
+					</div>
+					<div class="form-holder">
+				    <br>
+						<input type="text" class="form-control" placeholder="Patient Disease" name="disease">
+					</div>
+					<div class="form-holder">
+					<br>
+						<input type="number" class="form-control" placeholder="Patient bill" name="bill" >
+					</div>
+					<div class="form-holder">
+					<br>
+					<input type="text" class="form-control" placeholder="Patient Doctor" name="doctor" >
+					</div><br>
+					   <div style="text-align:center;">
+           <input type="submit" value="Update Changes" class="btn btn-danger">
+          </div>
+				</form>
+      </div>
+     </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="updateform.jsp">
+           <div class="form-group">
+          <label>PATIENT ID</label><br>
+        
+           <input type="text" name="id" method="post">
+          <h6><font color="red";>*Enter the Patient id to be Updated</font></h6>
+          </div>
+
+          <div class="form-group">
+           <input type="submit" value="submit" class="btn btn-danger">
+          </div>
+          </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
